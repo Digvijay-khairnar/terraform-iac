@@ -1,10 +1,3 @@
-provider "aws" {
-  region = "eu-north-1"
-  access_key = "<access_key_id>"
-  secret_key = "<secret_key_id>"
-}
-
-
 resource "aws_instance" "my_instance" {
   ami = "ami-0aba19e56f3eaec05"
   instance_type = "t3.micro"
