@@ -1,11 +1,12 @@
 provider "aws" {
-  region = "us-east-2"
-  access_key = ""
-  secret_key = ""
+  region = "eu-north-1"
+  access_key = "<access_key_id>"
+  secret_key = "<secret_key_id>"
 }
 
-resource "aws_instance" "my_instanc" {
-  ami = "ami-0e5497a77ef21b5ac"
+
+resource "aws_instance" "my_instance" {
+  ami = "ami-0aba19e56f3eaec05"
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.my_sg.id]
   tags = {
@@ -15,7 +16,7 @@ resource "aws_instance" "my_instanc" {
 
 resource "aws_security_group" "my_sg" {
   name = "my-sg"
-  vpc_id = "vpc-096675e275f26d967"
+  vpc_id = "vpc-085b390d863d9bca3"
   ingress {
     protocol = "TCP"
     from_port = 80
